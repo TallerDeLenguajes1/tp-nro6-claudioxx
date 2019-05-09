@@ -1,0 +1,7 @@
+H:\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.exe.config
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.exe.config
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.exe
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.pdb
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.csprojResolveAssemblyReference.cache
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.exe
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.pdb
