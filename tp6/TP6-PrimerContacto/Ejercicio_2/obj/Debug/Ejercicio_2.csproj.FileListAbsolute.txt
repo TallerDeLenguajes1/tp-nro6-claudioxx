@@ -1,0 +1,5 @@
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_2\bin\Debug\Ejercicio_2.exe.config
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_2\bin\Debug\Ejercicio_2.exe
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_2\bin\Debug\Ejercicio_2.pdb
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_2\obj\Debug\Ejercicio_2.exe
+H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_2\obj\Debug\Ejercicio_2.pdb

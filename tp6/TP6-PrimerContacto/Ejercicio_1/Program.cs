@@ -10,11 +10,23 @@ namespace Ejercicio_1
     {
         static void Main(string[] args)
         {
-            int num;
-            Console.WriteLine("INGRESE UN NUMERO:" );
-            num = Convert.ToInt32(Console.ReadLine());
-
+            int num,invert=0,aux,mult=1;
+            Console.Write("INGRESE UN NUMERO: ");
+            num = int.Parse(Console.ReadLine());
+            Invertir_Numero(num);
             Console.ReadKey();
+        }
+
+        static public void Invertir_Numero(int num)
+        {
+            int numero, invert = 0;
+            numero = num;
+            while (numero != 0)
+            {
+                invert = invert * 10 + (numero % 10);
+                numero = numero / 10;
+            }
+            Console.Write(invert);
         }
     }
 }
