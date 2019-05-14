@@ -10,7 +10,7 @@ namespace Ejercicio_1
     {
         static void Main(string[] args)
         {
-            int num,invert=0,aux,mult=1;
+            int num;
             Console.Write("INGRESE UN NUMERO: ");
             num = int.Parse(Console.ReadLine());
             Invertir_Numero(num);

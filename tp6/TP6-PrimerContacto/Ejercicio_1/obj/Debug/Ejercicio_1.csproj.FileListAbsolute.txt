@@ -5,3 +5,10 @@ H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio
 H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.csprojResolveAssemblyReference.cache
 H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.exe
 H:\repo\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.pdb
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.exe.config
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.exe
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\bin\Debug\Ejercicio_1.pdb
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.csprojAssemblyReference.cache
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.csproj.CoreCompileInputs.cache
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.exe
+D:\repositorio\tp-nro6-claudioxx\tp6\TP6-PrimerContacto\Ejercicio_1\obj\Debug\Ejercicio_1.pdb
