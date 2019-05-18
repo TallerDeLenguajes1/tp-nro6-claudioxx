@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
+/*RESPUESTAS:
+ (4)
+    1: Es un tipo por referencia.
+    3: El uso del caracter @ antes de un string es mayormente en rutas a ficheros, archivos dentro de la pc ya que
+    este caracter basicamente lo que hace es que el compilador no tome en cuenta las secuencias de escape, osea,
+    interpreta la cadena como si solamente fueran caracteres.
+ (5)
+    1: No, varios lenguajes de programacion hacen uso de las expresiones regulares.
+    2: mayormente se las utiliza para restringir al usuario que caracteres debe ingresar, por ejemplo, en contraseñas,
+    correos electronicos, numero de telefono, url.
+    3: Basicamente se hace uso de las expresiones regulares mediante la clase (Regex), con la cual podemos encontrar
+    coincidencias en un texto, remplazar en un texto, dividir un texto y muchas otras cosas seguro :D. 
+ */
 namespace Ejercicio_2_3_4
 {
     class Program
@@ -17,7 +30,7 @@ namespace Ejercicio_2_3_4
         {
             int opcion=0, a=0,b=0;
             Console.Clear();
-            Console.Write("1:SUMA\n2:RESTA\n3:MULTIPLICACION\n4:DIVIDISION\n5:VA,CUADRADO,RAIZ,SENO,COSENO,PARTE ENTERA,MAX y MIN\n6:EJERCICIO 6\n0:SALIR\n\nQUE OPERACION DESEA REALIZAR:");
+            Console.Write("1:SUMA\n2:RESTA\n3:MULTIPLICACION\n4:DIVIDISION\n5:VA,CUADRADO,RAIZ,SENO,COSENO,PARTE ENTERA,MAX y MIN\n6:EJERCICIO 4\n7: EJERCICIO 5\n0:SALIR\n\nQUE OPERACION DESEA REALIZAR:");
             opcion = int.Parse(Console.ReadLine());
             switch (opcion)
             {
@@ -63,7 +76,7 @@ namespace Ejercicio_2_3_4
                 case 6:
                     string text;
                     Console.Clear();
-                    Console.Write("\t\tEJERCICIO 6\n\nINGRESAR UN TEXTO: ");
+                    Console.Write("\t\tEJERCICIO 4\n\nINGRESAR UN TEXTO: ");
                     text = Console.ReadLine();
                     Letras_cadena(text);
                     Longitud(text);
@@ -75,6 +88,14 @@ namespace Ejercicio_2_3_4
                     Bloq_Mayus(text);
                     Comparar(text);
                     separar();
+                    Calculadora();
+                    Otra_Operacion();
+                    break;
+                case 7:
+                    Console.Clear();
+                    Console.Write("\t\tEJERCICIO 5\n");
+                    Direccion_web();
+                    Email();
                     Otra_Operacion();
                     break;
                 case 0:
@@ -154,7 +175,7 @@ namespace Ejercicio_2_3_4
         static public void Concatenar(ref string cad)
         {
             string aux;
-            Console.Write("\n\nINGRESAR OTRO TEXTO: ");
+            Console.Write("\n\nINGRESAR TEXTO A CONCATENAR CON EL PRIMERO: ");
             aux = Console.ReadLine();
             //DOS MANERAS PARA CONCATENAR STRINGS.
             //cad += aux;
@@ -182,7 +203,7 @@ namespace Ejercicio_2_3_4
         static public void Ocurrencias(string cad)
         {
             string aux;
-            Console.Write("\n\nINGRESAR PALABRA A BUSCAR EN EL TEXTO: ");
+            Console.Write("\n\nINGRESAR PALABRA A BUSCAR: ");
             aux = Console.ReadLine();
             if (cad.Contains(aux))
                 Console.Write("\n* La palabra (" + aux + ") si se encuentra en el texto.");
@@ -213,9 +234,9 @@ namespace Ejercicio_2_3_4
         {
             string aux;
             char separador;
-            Console.Write("\n\nINGRESAR UN TEXTO: ");
+            Console.Write("\n\nINGRESAR UN TEXTO A SEPARAR: ");
             aux = Console.ReadLine();
-            Console.Write("\nINGRESAR EL CARACTER QUE SEPARARA EL TEXTO: ");
+            Console.Write("\nINGRESAR EL CARACTER QUE SEPARAR: ");
             separador = Convert.ToChar(Console.ReadLine());
             Console.Write("\n\n* Texto separado:\n");
             string[] cadenas = aux.Split(separador);
@@ -225,10 +246,103 @@ namespace Ejercicio_2_3_4
             }
         }
 
+        static public void Calculadora()
+        {
+            string op;
+            Console.Write("\nINGRESAR UNA ECUACION SIMPLE, EJ:(2+2): ");
+            op = Console.ReadLine();
+            int aux = op.Length;
+            double resultado = 0d;
+            if (!op.Contains('+') && !op.Contains('-') && !op.Contains('*') && !op.Contains('/'))
+            {
+                Console.Write("\nLA OPERACION INGRESADA NO ES CORRECTA.");
+                Calculadora();
+            }
+            if (op[0] == '+' || op[0] == '-' || op[0] == '*' || op[0] == '/')
+            {
+                Console.Write("\nLA OPERACION INGRESADA NO ES CORRECTA.");
+                Calculadora();
+            }
+            else if (op[op.Length - 1] == '+' || op[op.Length - 1] == '-' || op[op.Length - 1] == '*' || op[op.Length - 1] == '/')
+            {
+                Console.Write("\nLA OPERACION INGRESADA NO ES CORRECTA.");
+                Calculadora();
+            }
+            else foreach (char c in op)
+                {
+                    if (!char.IsDigit(c) && (c != '+' && c != '-' && c != '*' && c != '/'))
+                    {
+                        Console.Write("\nLA OPERACION INGRESADA NO ES CORRECTA.");
+                        Calculadora();
+                    }
+                }
+            if (op.Contains('+'))
+            {
+                string[] valores = op.Split('+');
+                foreach(string str in valores)
+                {
+                    resultado += Convert.ToInt64(str);
+                }
+            }
+            else if (op.Contains('-'))
+            {
+                string[] valores = op.Split('-');
+                foreach (string str in valores)
+                {
+                    resultado -= Convert.ToInt64(str);
+                }
+            }
+            else if (op.Contains('*'))
+            {
+                resultado = 1;
+                string[] valores = op.Split('*');
+                foreach (string str in valores)
+                {
+                    resultado *= Convert.ToInt64(str);
+                }
+            }
+            else if (op.Contains('/'))
+            {
+                string[] valores = op.Split('/');
+                if (Convert.ToInt64(valores[1]) <= 0)
+                {
+                    Console.Write("\nEL DIVISOR NO PUEDE SER MENOR O IGUAL A CERO (0).");
+                    Calculadora();
+                }
+                resultado =  float.Parse(valores[0]) / Convert.ToInt64(valores[1]);
+            }
+            Console.Write("* Resultado de la ecuacion: " + resultado);
+        }
+
+        static public void Direccion_web()
+        {
+            string Expreg,cad;
+            Console.Write("INGRESAR UNA DIRECCION WEB: ");
+            cad = Console.ReadLine();
+            Expreg = @"[w]{3}(\.)\w+\.[com|net|info|org]";
+            if (Regex.IsMatch(cad, Expreg))
+                Console.Write("\n* La direccion ingresada es correcta.\n");
+            else
+                Console.Write("\n* La direccion ingresada es incorrecta.\n");
+        }
+
+        static public void Email()
+        {
+            string cad, Expreg;
+            Console.Write("\nINGRESAR UN MAIL: ");
+            cad = Console.ReadLine();
+            Expreg = @"([A-Za-z0-9.]+)@\w+\.com";
+            if (Regex.IsMatch(cad, Expreg))
+                Console.Write("\n* El mail ingresado es correcto.");
+            else
+                Console.Write("\n* El mail ingresado es incorrecto.");
+            Email();
+        }
+
         static public void Otra_Operacion()
         {
             string eleccion;
-            Console.Write("\n\nDESEA REALIZAR OTRA OPERACION (SI/NO): ");
+            Console.Write("\n\nDESEA REALIZAR OTRA ACCION (SI/NO): ");
             eleccion = Console.ReadLine();
             eleccion = eleccion.ToLower();
             if (eleccion == "si")
